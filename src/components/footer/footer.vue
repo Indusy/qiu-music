@@ -33,6 +33,7 @@
     right: 0;
     background-color: $color-gray-1;
     backdrop-filter: blur(2px);
+    z-index: 10;
   }
 
   .nav {

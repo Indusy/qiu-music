@@ -18,12 +18,21 @@
 .header {
   width: 100%;
   height: 45px;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   border-bottom: 0.5px solid $color-gray-4;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   box-sizing: border-box;
   padding: 10px 15px;
+  z-index: 10;
+  transform: translateZ(10px);
+  background-color: #fff;
+  box-shadow: 0 1px 10px $color-transparent-1;
 
   .title {
     font-size: 18rem;
