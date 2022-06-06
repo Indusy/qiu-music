@@ -31,7 +31,7 @@ albums.value = result.albums
 </script>
 
 <template>
-  <div class="recommend">
+  <div class="recommend" v-loading="loading">
     <m-scroll class="recommend-content">
       <div class="slider-wrapper">
         <div class="slider-content">

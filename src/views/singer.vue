@@ -18,11 +18,11 @@ function cacheSinger(singer) {
   storage.session.set(SINGER_KEY, singer)
 }
 
-function selectSinger (singer) {
+function selectSinger(singer) {
   selectedSinger.value = singer
   cacheSinger(singer)
   router.push({
-    path: `/singers/${singer.mid}`
+    path: `/singer/${singer.mid}`
   })
 }
 
@@ -32,6 +32,11 @@ function selectSinger (singer) {
   <div class="singer">
     <index-list :data="singers" @select="selectSinger">
     </index-list>
+    <router-view v-slot="{ Component }">
+      <transition appear name="slide">
+        <component :is="Component" :data="selectedSinger" />
+      </transition>
+    </router-view>
   </div>
 </template>
 

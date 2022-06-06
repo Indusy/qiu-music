@@ -12,3 +12,7 @@ body {
   user-select: none;
   background-image: linear-gradient(to right, $color-gray-2, $color-violet-1, $color-red-1, $color-green-1, $color-yellow-1);
 }
+
+.g-relative {
+  position: relative;
+}
