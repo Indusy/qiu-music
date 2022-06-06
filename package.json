@@ -14,6 +14,7 @@
     "@better-scroll/slide": "^2.4.2",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "good-storage": "^1.1.1",
     "js-base64": "^3.7.2",
     "pinyin": "^2.11.2",
     "vh-check": "^2.0.5",

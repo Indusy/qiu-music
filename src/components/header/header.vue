@@ -23,7 +23,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-  border-bottom: 0.5px solid $color-gray-4;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -32,25 +31,28 @@
   z-index: 10;
   transform: translateZ(10px);
   background-color: #fff;
-  box-shadow: 0 1px 10px $color-transparent-1;
+  background-image: linear-gradient(to right, $color-gray-2, $color-violet-1, $color-red-1, $color-green-1, $color-yellow-1);
+  box-shadow: 0 1px 20px $color-transparent-1;
 
   .title {
-    font-size: 18rem;
+    font-size: 18px;
     margin: 0;
     display: inline-block;
     vertical-align: middle;
     color: $color-violet-10;
+    text-shadow: 0 1px 1px $color-violet-2;
+
   }
 
   .logo {
-    font-size: 22rem;
+    font-size: 22px;
     vertical-align: middle;
     margin-right: 6px;
     color: $color-violet-10;
   }
 
   .user {
-    font-size: 22rem;
+    font-size: 22px;
     vertical-align: middle;
   }
 }

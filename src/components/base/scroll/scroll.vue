@@ -1,6 +1,6 @@
 <script setup>
 import useScroll from './use-scroll'
-import { ref, defineProps, defineEmits } from 'vue'
+import { ref, defineProps, defineEmits, defineExpose } from 'vue'
 
 const props = defineProps({
   click: {
@@ -17,7 +17,10 @@ const emits = defineEmits(['scroll'])
 
 
 const rootRef = ref(null)
-useScroll(rootRef, props, emits)
+const scroll = useScroll(rootRef, props, emits)
+defineExpose({
+  scroll
+})
 
 </script>
 

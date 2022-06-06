@@ -2,7 +2,7 @@ $fixed-100-vh: calc(100vh - var(--vh-offset));
 $color-gray-1: #f9f9f9;
 $color-gray-2: #f4f4f4;
 $color-gray-3: #eeeeee;
-$color-gray-4: #dbdbdb;
+$color-gray-4: #e6e6e6;
 $color-gray-5: #cccccc;
 $color-gray-6: #bcbcbc;
 $color-gray-7: #aeaeae;
@@ -17,8 +17,18 @@ $color-dark-7: #444;
 $color-dark-8: #333;
 $color-dark-9: #222;
 
-
+$color-violet-1: #faf5ff;
+$color-violet-2: #ccafff;
+$color-violet-3: #b990ff;
 $color-violet-10: #792bff;
+
+$color-red-1: rgb(255, 246, 246);
+$color-red-2: rgb(255, 214, 214);
+$color-red-3: rgb(255, 179, 179);
+
+$color-yellow-1: rgb(255, 255, 245);
+$color-green-1: rgb(248, 255, 245);
+
 $color-transparent-1: rgba(0, 0, 0, 0.1);
 $color-transparent-2: rgba(0, 0, 0, 0.2);
 $color-transparent-3: rgba(0, 0, 0, 0.3);

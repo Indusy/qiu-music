@@ -57,6 +57,6 @@
   }
 
   .icon {
-    font-size: 28rem;
+    font-size: 28px;
   }
 </style>

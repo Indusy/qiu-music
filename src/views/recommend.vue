@@ -1,6 +1,6 @@
 <script setup>
 import Slider from '@/components/slider/slider'
-import MScroll from '@/components/base/scroll/scroll'
+import MScroll from '@/components/wrap-scroll'
 import { computed, ref } from 'vue'
 import { getRecommend } from '@/service/recommend'
 import { useRouter } from 'vue-router'
@@ -82,7 +82,7 @@ albums.value = result.albums
 
 .recommend-list {
   .list-title {
-    font-size: 16rem;
+    font-size: 16px;
   }
 
   ul {
@@ -106,12 +106,12 @@ albums.value = result.albums
         text-shadow: 0 0 5px $color-transparent-2;
         .name {
           margin: 6px 0;
-          font-size: 16rem;
+          font-size: 16px;
           color: $color-dark-9;
         }
         .title {
           margin: 0;
-          font-size: 14rem;
+          font-size: 14px;
           color: $color-dark-8;
         }
       }
