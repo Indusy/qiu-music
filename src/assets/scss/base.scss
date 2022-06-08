@@ -15,6 +15,12 @@ body {
   background-image: $bg-image;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .slide-enter-active, .slide-leave-active {
   transition: all 0.3s
 }

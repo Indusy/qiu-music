@@ -67,6 +67,10 @@ function getRankText(index) {
       margin-right: 20px;
       text-align: center;
 
+      .text {
+        font-size: 16px;
+      }
+
       .icon {
         display: inline-block;
         width: 25px;

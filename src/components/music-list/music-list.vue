@@ -134,7 +134,7 @@ export default {
     <div class="bg-image" :style="bgImageStyle" ref="bgImage">
       <div class="play-btn-wrapper" :style="playBtnStyle">
         <div v-show="songs.length > 0" class="play-btn" @click="random">
-          <i class="icon-play"></i>
+          <i class="icon-media-play"></i>
           <span class="text">随机播放全部</span>
         </div>
       </div>
@@ -208,7 +208,7 @@ export default {
         font-size: 0;
       }
 
-      .icon-play {
+      .icon-media-play {
         display: inline-block;
         vertical-align: middle;
         margin-right: 6px;
