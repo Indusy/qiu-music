@@ -57,6 +57,11 @@ albums.value = result.albums
         </div>
       </div>
     </m-scroll>
+    <router-view v-slot="{ Component }">
+      <transition appear name="slide">
+        <component :is="Component" :data="selectedAlbum" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -92,6 +97,7 @@ albums.value = result.albums
     .item {
       display: flex;
       margin: 30px 0;
+
       .icon {
         width: 60px;
         height: 60px;
@@ -104,11 +110,13 @@ albums.value = result.albums
       .text {
         flex: 1;
         text-shadow: 0 0 5px $color-transparent-2;
+
         .name {
           margin: 6px 0;
           font-size: 16px;
           color: $color-dark-9;
         }
+
         .title {
           margin: 0;
           font-size: 14px;

@@ -3,6 +3,7 @@ import vhCheck from 'vh-check'
 import { onMounted } from 'vue'
 import MHeader from '@/components/header/header'
 import MFooter from '@/components/footer/footer'
+import Player from './components/player/player'
 
   onMounted(() => {
     const offset = vhCheck().offset
@@ -15,6 +16,7 @@ import MFooter from '@/components/footer/footer'
   <Suspense>
     <router-view/>
   </Suspense>
+  <player></player>
   <m-footer />
 </template>
 
