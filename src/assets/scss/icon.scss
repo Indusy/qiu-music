@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3410417 */
-  src: url('../fonts/iconfont.woff2?t=1654423548645') format('woff2'),
-       url('../fonts/iconfont.woff?t=1654423548645') format('woff'),
-       url('../fonts/iconfont.ttf?t=1654423548645') format('truetype');
+  src: url('../fonts/iconfont.woff2?t=1654947581181') format('woff2'),
+       url('../fonts/iconfont.woff?t=1654947581181') format('woff'),
+       url('../fonts/iconfont.ttf?t=1654947581181') format('truetype');
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -11,6 +11,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-trash:before {
+  content: "\e738";
+}
+
+.icon-close-circle:before {
+  content: "\e77d";
+}
+
+.icon-upa:before {
+  content: "\e615";
+}
+
+.icon-Up-:before {
+  content: "\e75d";
+}
+
+.icon-Dismiss-1:before {
+  content: "\e668";
+}
+
+.icon-Dismiss:before {
+  content: "\e667";
+}
+
+.icon-ic_music:before {
+  content: "\e6bf";
 }
 
 .icon-home:before {
@@ -105,26 +133,6 @@
   content: "\e781";
 }
 
-.icon-pause:before {
-  content: "\e7fe";
-}
-
-.icon-step-backward:before {
-  content: "\e8ef";
-}
-
-.icon-step-forward:before {
-  content: "\e8f0";
-}
-
-.icon-Music:before {
-  content: "\e99b";
-}
-
-.icon-yinle:before {
-  content: "\e60a";
-}
-
 .icon-headset:before {
   content: "\e874";
 }
@@ -145,10 +153,6 @@
   content: "\e879";
 }
 
-.icon-yinle1:before {
-  content: "\e61b";
-}
-
 .icon-sousuo:before {
   content: "\100d0";
 }
@@ -160,4 +164,3 @@
 .icon-a-zujiantianchong_huaban1fuben17:before {
   content: "\e6dc";
 }
-
