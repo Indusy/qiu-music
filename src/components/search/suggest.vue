@@ -115,7 +115,7 @@ export default {
     <ul class="suggest-list">
       <li class="suggest-item" v-if="singer" @click="selectSinger(singer)">
         <div class="icon">
-          <i class="icon-mine"></i>
+          <i class="icon-user"></i>
         </div>
         <div class="name">
           <p class="text">{{ singer.name }}</p>
@@ -142,34 +142,34 @@ export default {
   height: 100%;
   overflow: hidden;
 
- .suggest-list {
+  .suggest-list {
     .suggest-item {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
 
-    .icon {
-      flex: 0 0 30px;
-      width: 30px;
+      .icon {
+        flex: 0 0 30px;
+        width: 30px;
 
-      [class^="icon-"] {
-        font-size: 14px;
-        color: $color-dark-7;
+        [class^="icon-"] {
+          font-size: 14px;
+          color: $color-dark-7;
+        }
       }
-    }
 
-    .name {
-      flex: 1;
-      font-size: 16px;
-      color: $color-dark-7;
-      overflow: hidden;
+      .name {
+        flex: 1;
+        font-size: 16px;
+        color: $color-dark-7;
+        overflow: hidden;
 
-      .text {
-        margin: 0;
-        @include no-wrap();
+        .text {
+          margin: 0;
+          @include no-wrap();
+        }
       }
     }
   }
- }
 }
 </style>

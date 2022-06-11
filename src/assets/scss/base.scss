@@ -33,6 +33,10 @@ ul {
   transition: all 0.3s;
 }
 
+.list-enter-from, .list-leave-to {
+  height: 0 !important;
+}
+
 .g-relative {
   position: relative;
 }

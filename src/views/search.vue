@@ -110,7 +110,6 @@ function cacheSinger(singer) {
   .search-input-wrapper {
     padding: 20px 0 10px 0;
     background-image: $bg-image;
-    z-index: 20;
   }
 
   .search-content {
@@ -145,9 +144,6 @@ function cacheSinger(singer) {
         color: $color-dark-7;
         display: flex;
         justify-content: space-between;
-              .clear {
-        
-      }
       }
     }
   }

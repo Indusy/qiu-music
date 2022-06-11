@@ -37,3 +37,16 @@ export default {
     </transition-group>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.search-list {
+  .search-item {
+    color: $color-dark-4;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+}
+</style>

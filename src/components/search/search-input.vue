@@ -36,7 +36,7 @@
   <div class="search-input">
     <i class="icon-sousuo"></i>
     <input v-model="query" :placeholder="placeholder" type="text" class="input-inner">
-    <i v-show="query" @click="clear" class="icon-dismiss icon-user"></i>
+    <i v-show="query" @click="clear" class="icon-dismiss icon-close-circle"></i>
   </div>
 </template>
 
@@ -45,7 +45,6 @@
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  z-index: 20;
 
   .icon-sousuo {
     position: absolute;
