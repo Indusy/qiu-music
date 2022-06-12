@@ -36,54 +36,55 @@ const { sliders } = toRefs(props)
 
 <style lang="scss" scoped>
 .slider {
+  min-height: 1px;
+  font-size: 0;
+  touch-action: pan-y;
+  width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  font-size: 0;
-  box-shadow: 0px 0px 10px $color-transparent-2;
-  touch-action: pan-y;
   position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 
-.slider-group {
-  width: 100%;
-  overflow: hidden;
+  .slider-group {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
 
-  .slider-page {
-    display: inline-block;
-
-    a {
+    .slider-page {
       display: inline-block;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
 
-    img {
-      width: 100%;
+      a {
+        display: block;
+        width: 100%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
-}
 
-.dots-wrapper {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  column-gap: 5px;
+  .dots-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    line-height: 12px;
+    transform: translateX(-50%);
 
-  bottom: 12px;
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50px;
-    background-color: $-color-transparent-5;
+    .dot {
+      display: inline-block;
+      margin: 0 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $-color-transparent-5;
 
-    &.active {
-      width: 16px;
+      &.active {
+        width: 20px;
+        border-radius: 5px;
+      }
     }
   }
 }

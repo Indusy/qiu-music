@@ -25,13 +25,7 @@ defineExpose({
 </script>
 
 <template>
-  <div ref="rootRef" class="scrollRef">
+  <div ref="rootRef">
     <slot></slot>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.scrollRef {
-  transition: height 0.6s;
-}
-</style>

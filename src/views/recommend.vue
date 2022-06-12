@@ -1,9 +1,11 @@
 <script setup>
-import Slider from '@/components/slider/slider'
+import Slider from '@/components/base/slider/slider'
 import MScroll from '@/components/wrap-scroll'
 import { computed, ref } from 'vue'
 import { getRecommend } from '@/service/recommend'
 import { useRouter } from 'vue-router'
+import storage from 'good-storage'
+import { ALBUM_KEY } from '@/assets/js/constant'
 
 // data
 const sliders = ref([])
@@ -12,16 +14,21 @@ const selectedAlbum = ref(null)
 
 // computed
 const loading = computed(() => {
-  return sliders.value.length && !albums.value.length
+  return !sliders.value.length && !albums.value.length
 })
 
 const router = useRouter()
 
 function selectItem(album) {
   selectedAlbum.value = album
+  cacheAlbum(album)
   router.push({
     path: `/recommend/${album.id}`
   })
+}
+
+function cacheAlbum(album) {
+  storage.session.set(ALBUM_KEY, album)
 }
 
 const result = await getRecommend()
