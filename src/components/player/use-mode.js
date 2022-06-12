@@ -9,10 +9,10 @@ export default function useMode() {
   const modeIcon = computed(() => {
     const playModeVal = playMode.value
     return playModeVal === PLAY_MODE.sequence
-      ? 'icon-sequence'
+      ? 'icon-shunxubofang'
       : playModeVal === PLAY_MODE.random
-        ? 'icon-random'
-        : 'icon-loop'
+        ? 'icon-suijibofang'
+        : 'icon-danquxunhuan'
   })
 
   const modeText = computed(() => {

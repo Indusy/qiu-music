@@ -6,10 +6,12 @@
   <div class="header">
     <div class="header-l">
       <span class="logo icon-box"></span>
-    <h1 class="title">MusicBox</h1>
+      <h1 class="title">MusicBox</h1>
     </div>
     <div class="header-r">
-      <span class="user icon-user"></span>
+      <router-link class="minemine" to="/user">
+        <i class="user icon-user"></i>
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,6 +51,11 @@
     vertical-align: middle;
     margin-right: 6px;
     color: $color-violet-10;
+  }
+
+  .minemine {
+    text-decoration: none;
+    color: $color-dark-7;
   }
 
   .user {
