@@ -15,9 +15,9 @@ const props = defineProps({
 
 const emits = defineEmits(['scroll'])
 
-
 const rootRef = ref(null)
 const scroll = useScroll(rootRef, props, emits)
+
 defineExpose({
   scroll
 })
@@ -25,7 +25,13 @@ defineExpose({
 </script>
 
 <template>
-  <div ref="rootRef">
+  <div ref="rootRef" class="scrollRef">
     <slot></slot>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.scrollRef {
+  transition: height 0.6s;
+}
+</style>

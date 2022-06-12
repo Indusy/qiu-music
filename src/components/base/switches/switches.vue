@@ -1,18 +1,3 @@
-<template>
-  <ul class="switches">
-    <li
-      class="switch-item"
-      v-for="(item, index) in items"
-      :key="item"
-      :class="{'active':modelValue === index}"
-      @click="switchItem(index)"
-    >
-      <span>{{item}}</span>
-    </li>
-    <div class="active-bar" :style="activeStyle"></div>
-  </ul>
-</template>
-
 <script>
   export default {
     name: 'switches',
@@ -44,6 +29,21 @@
   }
 </script>
 
+<template>
+  <ul class="switches">
+    <li
+      class="switch-item"
+      v-for="(item, index) in items"
+      :key="item"
+      :class="{'active':modelValue === index}"
+      @click="switchItem(index)"
+    >
+      <span>{{item}}</span>
+    </li>
+    <div class="active-bar" :style="activeStyle"></div>
+  </ul>
+</template>
+
 <style scoped lang="scss">
   .switches {
     display: flex;
@@ -51,7 +51,7 @@
     align-items: center;
     width: 240px;
     margin: 0 auto;
-    border: 1px solid $color-violet-1;
+    border: 1px solid $color-violet-2;
     border-radius: 5px;
     .switch-item {
       position: relative;

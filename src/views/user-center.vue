@@ -4,7 +4,7 @@
     v-no-result:[noResultText]="noResult"
   >
     <div class="back" @click="back">
-      <i class="icon-back"></i>
+      <i class="icon-back_android"></i>
     </div>
     <div class="switches-wrapper">
       <switches
@@ -17,7 +17,7 @@
       v-if="currentList.length"
       @click="random"
     >
-      <i class="icon-play"></i>
+      <i class="icon-media-play"></i>
       <span class="text">随机播放全部</span>
     </div>
     <div class="list-wrapper">
@@ -101,17 +101,18 @@
     bottom: 0;
     z-index: 100;
     width: 100%;
+    height: calc(100% - 50px);
     background: $bg-image;
     .back {
       position: absolute;
       top: 0;
       left: 6px;
       z-index: 50;
-      .icon-back {
+      .icon-back_android {
         display: block;
         padding: 10px;
-        font-size: 20px;
-        color: $bg-image;
+        font-size: 24px;
+        color: $color-dark-7;
       }
     }
     .switches-wrapper {
@@ -123,10 +124,13 @@
       padding: 7px 0;
       margin: 0 auto;
       text-align: center;
-      border: 1px solid $color-violet-1;
-      color: $color-violet-1;
+      border: 1px solid $color-dark-7;
+      color: $color-dark-7;
       border-radius: 100px;
       font-size: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .icon-play {
         display: inline-block;
         vertical-align: middle;

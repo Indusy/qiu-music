@@ -4,15 +4,18 @@ import { useStore } from 'vuex'
 import ProgressBar from './progress-bar'
 import useMode from './use-mode'
 import useFavorite from './use-favorite'
+  import useAnimation from './use-animation'
 import usePlayHistory from './use-play-history'
-  import { formatTime } from '@/assets/js/util'
+import { formatTime } from '@/assets/js/util'
 import { PLAY_MODE } from '@/assets/js/constant'
+import MiniPlayer from './mini-player'
 // data
 const audioRef = ref(null)
 const barRef = ref(null)
 const songReady = ref(false)
 const currentTime = ref(0)
 let progressChanging = false
+const playDesc = ref('正在加载')
 // vuex
 const store = useStore()
 const fullScreen = computed(() => store.state.fullScreen)
@@ -23,6 +26,7 @@ const playMode = computed(() => store.state.playMode)
 // hooks
 const { modeIcon, changeMode } = useMode()
 const { getFavoriteIcon, toggleFavorite } = useFavorite()
+      const { enter, afterEnter, leave, afterLeave } = useAnimation()
 // placeholder
 const { savePlay } = usePlayHistory()
 // computed
@@ -47,6 +51,7 @@ watch(currentSong, (newSong) => {
   audioEl.src = newSong.url
   audioEl.play()
   store.commit('setPlayingState', true)
+  playDesc.value = '正在播放'
 })
 watch(playing, (newPlaying) => {
   if (!songReady.value) {
@@ -55,9 +60,11 @@ watch(playing, (newPlaying) => {
   const audioEl = audioRef.value
   if (newPlaying) {
     audioEl.play()
+    playDesc.value = '正在播放'
     // playLyric()
   } else {
     audioEl.pause()
+    playDesc.value = '已暂停'
     // stopLyric()
   }
 })
@@ -155,8 +162,12 @@ function end() {
 
 <template>
   <div class="player" v-show="playlist.length">
-    <transition>
-      <div class="normal-player">
+    <transition name="normal"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @leave="leave"
+      @after-leave="afterLeave">
+      <div class="normal-player" v-show="fullScreen">
         <div class="player-header">
           <div class="shrink" @click="goBack">
             <i class="icon-back_android"></i>
@@ -173,10 +184,10 @@ function end() {
           </div>
         </div>
         <div class="progress-wrapper">
-          <span class="time time-l">{{formatTime(currentTime)}}</span>
+          <span class="time time-l">{{ formatTime(currentTime) }}</span>
           <progress-bar class="progress-bar" ref="barRef" :progress="progress" @progress-changing="onProgressChanging"
             @progress-changed="onProgressChanged"></progress-bar>
-            <span class="time time-r">{{formatTime(currentSong.duration)}}</span>
+          <span class="time time-r">{{ formatTime(currentSong.duration) }}</span>
         </div>
         <div class="operators">
           <div class="btn">
@@ -197,6 +208,7 @@ function end() {
         </div>
       </div>
     </transition>
+    <mini-player :progress="progress" :toggle-play="togglePlay" :next="next" :prev="prev" :playIcon="playIcon" :playing="playing"></mini-player>
     <audio ref="audioRef" @pause="pause" @canplay="ready" @error="error" @timeupdate="updateTime" @ended="end"></audio>
   </div>
 </template>
@@ -205,6 +217,7 @@ function end() {
 .player {
   position: absolute;
   top: 0;
+  z-index: 100;
 
   .normal-player {
     width: 100%;
@@ -311,6 +324,22 @@ function end() {
         }
       }
     }
+
+    &.normal-enter-active, &.normal-leave-active {
+        transition: all .6s;
+        .top, .bottom {
+          transition: all .6s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+      }
+      &.normal-enter-from, &.normal-leave-to {
+        opacity: 0;
+        .top {
+          transform: translate3d(0, -100px, 0);
+        }
+        .bottom {
+          transform: translate3d(0, 100px, 0)
+        }
+      }
   }
 }
 </style>
