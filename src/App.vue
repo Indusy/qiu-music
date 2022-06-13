@@ -12,12 +12,6 @@ export default {
     MFooter: Footer
   },
   computed: {
-    viewStyle() {
-      const bottom = this.playlist.length ? '60px' : '0'
-      return {
-        bottom
-      }
-    },
     ...mapState([
       'playlist'
     ])
@@ -32,13 +26,13 @@ export default {
 <template>
   <m-header />
   <Suspense>
-    <router-view :style="viewStyle" v-slot="{ Component }">
+    <router-view v-slot="{ Component }"  ref="viewRef">
       <keep-alive>
         <component :is="Component" />
       </keep-alive>
     </router-view>
   </Suspense>
-  <router-view :style="viewStyle" name="user" v-slot="{ Component }">
+  <router-view name="user" v-slot="{ Component }">
     <transition appear name="slide">
       <keep-alive>
         <component :is="Component" />

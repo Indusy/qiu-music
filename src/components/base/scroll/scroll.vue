@@ -16,16 +16,17 @@ const props = defineProps({
 const emits = defineEmits(['scroll'])
 
 const rootRef = ref(null)
-const scroll = useScroll(rootRef, props, emits)
+const {scroll, wrapperStyle } = useScroll(rootRef, props, emits)
 
 defineExpose({
-  scroll
+  scroll,
+  wrapperStyle
 })
 
 </script>
 
 <template>
-  <div ref="rootRef">
+  <div ref="rootRef" :style="wrapperStyle" class="haha">
     <slot></slot>
   </div>
 </template>
