@@ -25,14 +25,13 @@ export default function useScroll(wrapperRef, options, emit) {
   const playlist = computed(() => store.state.playlist)
 
   const watchStyle = () => {
-    console.log();
-
     if (playlist.value.length) {
       wrapperStyle.height = 
-      `${wrapperRef.value.clientHeight - miniHeight}px`
+      `${parseFloat(getComputedStyle(wrapperRef.value).height) - miniHeight}px`
     } else {
       wrapperStyle.height = ''
     }
+    scroll.value.refresh()
   }
   watch(playlist, watchStyle)
 
@@ -57,7 +56,6 @@ export default function useScroll(wrapperRef, options, emit) {
   onActivated(() => {
     scroll.value.enable()
     watchStyle()
-    scroll.value.refresh()
   })
 
   onDeactivated(() => {
